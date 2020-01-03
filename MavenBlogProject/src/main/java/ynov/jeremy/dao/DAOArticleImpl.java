@@ -20,7 +20,7 @@ public class DAOArticleImpl implements DAOArticle {
 	public Article getArticle(int id) {
 		Article article = new Article();
 		try {
-			String query = "SELECT * ,DATE_FORMAT(article_date, '%d/%b/%Y') FROM article JOIN autor ON article.autor_id=autor.autor_id WHERE article_id=? ;" ;
+			String query = "SELECT * FROM article JOIN autor ON article.autor_id=autor.autor_id WHERE article_id=? ;" ;
 			PreparedStatement ps = connection.prepareStatement(query);
 			ps.setInt(1, id);
 			ResultSet resultat = ps.executeQuery();
@@ -140,5 +140,8 @@ public class DAOArticleImpl implements DAOArticle {
 		
 		return listArticle;
 	}
+
+
+	
 
 }

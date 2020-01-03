@@ -60,6 +60,14 @@
 	</servlet-mapping>
 	
 	<servlet>
+		<servlet-name>AutorServlet</servlet-name>
+		<servlet-class>ynov.jeremy.servlets.AutorServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AutorServlet</servlet-name>
+		<url-pattern>/autor</url-pattern>
+	</servlet-mapping>
+	<servlet>
 		<servlet-name>Autors</servlet-name>
 		<servlet-class>ynov.jeremy.servlets.Autors</servlet-class>
 	</servlet>
@@ -67,6 +75,7 @@
 		<servlet-name>Autors</servlet-name>
 		<url-pattern>/autors</url-pattern>
 	</servlet-mapping>
+	
 	
 	<servlet>
 		<servlet-name>Login</servlet-name>

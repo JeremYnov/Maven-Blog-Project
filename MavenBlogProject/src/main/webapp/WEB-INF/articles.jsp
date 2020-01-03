@@ -13,7 +13,7 @@
 	crossorigin="anonymous">
 <script src="https://kit.fontawesome.com/c3feb606cd.js"
 	crossorigin="anonymous"></script>
-<title>Document</title>
+<title>Articles</title>
 <style type="text/css">
 .container, .row {
 	padding: 30px 0;
@@ -51,7 +51,7 @@
 			<c:forEach items="${ articles }" var="article" varStatus="status">
 				<div class="col-lg-4 col-md-6 mb-4">
 					<div class="card h-100">
-						<a href="#"></a> <a href="#"><img
+						<a href="<%=application.getContextPath()%>/article?id=${article.getId()}"><img
 							src="http://placehold.it/350x150" width="100%" height="150" /></a>
 						<div class="card-body">
 							<h4 class="card-title">
@@ -93,8 +93,9 @@ ${ article.getDescription() }
 			</c:forEach>
 		</div>
 	</div>
-
-	<jsp:include page="footer.jsp" />
+<c:if test="${!empty articles}">
+<jsp:include page="footer.jsp" />
+	</c:if>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

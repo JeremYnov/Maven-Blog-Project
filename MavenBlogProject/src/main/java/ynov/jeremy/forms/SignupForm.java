@@ -89,7 +89,7 @@ public class SignupForm {
 
 	private void validationName( String name ) throws Exception {
 	    if ( name != null && name.length() < 2 ) {
-	        throw new Exception( "Le nom d'utilisateur doit contenir au moins 2 caractères." );
+	        throw new Exception( "Le prénom d'utilisateur doit contenir au moins 2 caractères." );
 	    }else if(name==null){
 	    	throw new Exception( "Merci de saisir un prénom." );
 	    }
@@ -123,10 +123,6 @@ public class SignupForm {
 	        throw new Exception( "Merci de saisir et confirmer votre mot de passe." );
 	    }
 	}
-
-	
-	
-	
 	
 	private void setError( String champ, String message ) {
 	    errors.put( champ, message );

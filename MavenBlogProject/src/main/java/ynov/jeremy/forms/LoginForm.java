@@ -10,8 +10,9 @@ import ynov.jeremy.dao.DAOFactory;
 import ynov.jeremy.model.Autor;
 
 public class LoginForm {
-	 DAOFactory factory = new DAOFactory();
-	 DAOAutor daoautor = factory.getDaoAutor();
+	DAOFactory factory = new DAOFactory();
+	DAOAutor daoautor = factory.getDaoAutor();
+	
 	private static final String CHAMP_EMAIL  = "email";
     private static final String CHAMP_PASS   = "password";
     private String result;
@@ -54,13 +55,11 @@ public class LoginForm {
 	        result = "Vous vous êtes connecté avec succès !";
 	        
 	    } else {
-	        result = "Échec de l'inscription.";
+	        result = "Impossible de vous connecter car les informations que vous avez entrées sont érronées.";
 	    }
 	    
 	    return autor;
 	}
-	
-	/* Méthode de validation des infos entrées par l'utilisateur */ 
 	
 	private void validationEmail( String email ) throws Exception {
         if ( email != null && !email.matches( "([^.@]+)(\\.[^.@]+)*@([^.@]+\\.)+([^.@]+)" ) ) {

@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import ynov.jeremy.model.Article;
 import ynov.jeremy.model.Autor;
 
 public class DAOAutorImpl implements DAOAutor {
@@ -15,6 +16,29 @@ public class DAOAutorImpl implements DAOAutor {
 	public DAOAutorImpl(Connection co) {
 		this.connection = co;
 	}
+	
+	public Autor getAutor(int id) {
+		Autor autor = new Autor();
+		try {
+			String query = "SELECT * FROM autor WHERE autor_id=?;";
+			PreparedStatement ps = connection.prepareStatement(query);
+			ps.setInt(1, id);
+			ResultSet resultat = ps.executeQuery();
+
+			while (resultat.next()) {
+				autor.setId(resultat.getInt("autor_id"));
+				autor.setName(resultat.getString("autor_name"));
+				autor.setSurname(resultat.getString("autor_surname"));
+				autor.setMail(resultat.getString("autor_mail"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		// TODO Auto-generated method stub
+		return autor;
+
+	}
+
 
 	public void addAutor(Autor autor) {
 		try {
@@ -45,6 +69,9 @@ public class DAOAutorImpl implements DAOAutor {
 			//System.out.println("Validation in boucle"+ getValidation());
 			if(getValidation()) {
 				System.out.println("L'utilisateur a été trouvé dans la BDD");
+				autor.setId(result.getInt("autor_id"));
+				autor.setName(result.getString("autor_name"));
+				autor.setSurname(result.getString("autor_surname"));
 			}else {
 				System.out.println("L'utilisateur est introuvable dans la BDD");	
 			}
@@ -76,6 +103,68 @@ public class DAOAutorImpl implements DAOAutor {
 		
 		return listAutor;
 	}
+	
+	public List<Article> getAllArticles() {
+		List<Article> listArticle = new ArrayList<Article>();
+		try {
+			String query = "SELECT *, DATE_FORMAT(article_date, '%d %b %Y') FROM article JOIN autor ON article.autor_id=autor.autor_id ORDER BY article.autor_id,article_id;";
+			PreparedStatement ps = connection.prepareStatement(query);
+			ResultSet resultat = ps.executeQuery();
+			while (resultat.next()) {
+				Article article = new Article();
+				Autor autor = new Autor();
+				article.setId(resultat.getInt("article_id"));
+				article.setTitle(resultat.getString("article_title"));
+				article.setDescription(resultat.getString("article_description"));
+				article.setContent(resultat.getString("article_content"));
+				article.setDate(resultat.getDate("article_date"));
+				autor.setId(resultat.getInt("autor_id"));
+				autor.setName(resultat.getString("autor_name"));
+				autor.setSurname(resultat.getString("autor_surname"));
+				article.setAutor(autor);
+				listArticle.add(article);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return listArticle;
+	}
+	
+	public List<Article> getArticlesByAutor(int id) {
+		List<Article> articlesByAutor = new ArrayList<Article>();
+		try {
+			String query = "SELECT * FROM article JOIN autor ON autor.autor_id = article.autor_id WHERE article.autor_id=?;";
+			
+			PreparedStatement ps = connection.prepareStatement(query);
+			
+			ps.setInt(1, id);
+			
+			ResultSet resultat = ps.executeQuery();
+			
+			while (resultat.next()) {
+				Article article = new Article();
+				Autor autorArticle = new Autor();
+				article.setId(resultat.getInt("article_id"));
+				article.setTitle(resultat.getString("article_title"));
+				article.setDescription(resultat.getString("article_description"));
+				article.setContent(resultat.getString("article_content"));
+				article.setDate(resultat.getDate("article_date"));
+				
+				autorArticle.setId(resultat.getInt("autor_id"));
+				autorArticle.setName(resultat.getString("autor_name"));
+				autorArticle.setSurname(resultat.getString("autor_surname"));
+				article.setAutor(autorArticle);
+				articlesByAutor.add(article);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return articlesByAutor;
+	}
+	
+	
 
 	public boolean getValidation() {
 		return validation;

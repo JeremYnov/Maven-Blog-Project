@@ -13,7 +13,7 @@
 	crossorigin="anonymous">
 <script src="https://kit.fontawesome.com/c3feb606cd.js"
 	crossorigin="anonymous"></script>
-<title>Document</title>
+<title>Auteurs</title>
 </head>
 <body>
 	<jsp:include page="header.jsp" />
@@ -24,7 +24,6 @@
 	<table class="table table-striped table-dark">
   <thead>
     <tr>
-      <th scope="col">#</th>
       <th scope="col">Prénom</th>
       <th scope="col">Nom</th>
       <th scope="col">Mail</th>
@@ -33,14 +32,16 @@
   <tbody>
   <c:forEach items="${ autors }" var="autors" varStatus="status">
    <tr>
-      <th scope="row">${autors.getId()}</th>
       <td>${autors.getName()}</td>
       <td>${autors.getSurname()}</td>
       <td>${autors.getMail()}</td>
+      <td><a type="button" class="btn btn-primary" href="<%=application.getContextPath()%>/autor?id=${autors.getId()}">Article(s) de l'auteur</a></td>
+
     </tr>
 			</c:forEach>
   </tbody>
 </table>
+
 			
 	</div>
 
