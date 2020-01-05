@@ -2,7 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<html lang="en">
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,53 +13,29 @@
 	crossorigin="anonymous">
 <script src="https://kit.fontawesome.com/c3feb606cd.js"
 	crossorigin="anonymous"></script>
+	<style type="text/css">
+	.container{padding-bottom:50px}
+	</style>
 <title>Article ${article.getId()}</title>
 </head>
 <body>
 	<jsp:include page="header.jsp" />
 
 	<div class="container">
-		<div class="row">
-			<div class="col-lg-9">
+		<div class="row mx-md-n5">
 				<div class="card mt-4">
 					<img class="card-img-top img-fluid"
 						src="http://placehold.it/900x400" alt="">
 					<div class="card-body">
-						<h3 class="card-title">${article.getTitle()}</h3>
+						<h3 class="card-title display-4">${article.getTitle()}</h3>
+						<hr>
 						<p class="card-text">${article.getContent()}</p>
-
-						<small class="text-muted">Posted by
+						<hr>
+						<small class="text-muted">Posté par :
 							${article.getAutor().getName()}
-							${article.getAutor().getSurname()} on ${article.getDate()}</small>
+							${article.getAutor().getSurname()} le ${article.getDate()}</small>
 					</div>
 				</div>
-
-				<div class="card card-outline-secondary my-4">
-					<div class="card-header">Product Reviews</div>
-					<div class="card-body">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-							Omnis et enim aperiam inventore, similique necessitatibus neque
-							non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum.
-							Sequi mollitia, necessitatibus quae sint natus.</p>
-						<small class="text-muted">Posted by Anonymous on 3/1/17</small>
-						<hr>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-							Omnis et enim aperiam inventore, similique necessitatibus neque
-							non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum.
-							Sequi mollitia, necessitatibus quae sint natus.</p>
-						<small class="text-muted">Posted by Anonymous on 3/1/17</small>
-						<hr>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-							Omnis et enim aperiam inventore, similique necessitatibus neque
-							non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum.
-							Sequi mollitia, necessitatibus quae sint natus.</p>
-						<small class="text-muted">Posted by Anonymous on 3/1/17</small>
-						<hr>
-						<a href="#" class="btn btn-success">Leave a Review</a>
-					</div>
-				</div>
-
-			</div>
 		</div>
 
 	</div>

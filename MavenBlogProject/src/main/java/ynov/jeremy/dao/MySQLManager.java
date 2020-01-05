@@ -44,7 +44,6 @@ public class MySQLManager {
 	}
 
 	public Connection getConnection() {
-		// TODO Auto-generated method stub
 		return connection;
 	}
 }

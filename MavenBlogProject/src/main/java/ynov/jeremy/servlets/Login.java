@@ -34,7 +34,6 @@ public class Login extends HttpServlet{
         req.setAttribute( ATT_USER, autor );
         daoautor.getValidation();
         daoautor.loginAutor(autor);
-       // System.out.println("Test boolean validation"+daoautor.getValidation());
 
         if ( form.getErrors().isEmpty() && daoautor.getValidation() == true ) {
             session.setAttribute( ATT_SESSION, autor );

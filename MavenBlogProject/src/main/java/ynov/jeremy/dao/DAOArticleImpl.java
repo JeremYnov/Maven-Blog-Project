@@ -88,7 +88,7 @@ public class DAOArticleImpl implements DAOArticle {
 	public List<Article> getAllArticles() {
 		List<Article> listArticle = new ArrayList<Article>();
 		try {
-			String query = "SELECT *, DATE_FORMAT(article_date, '%d %b %Y') FROM article JOIN autor ON article.autor_id=autor.autor_id ORDER BY article.autor_id,article_id;";
+			String query = "SELECT * FROM article JOIN autor ON article.autor_id=autor.autor_id ORDER BY article.autor_id,article_id;";
 			PreparedStatement ps = connection.prepareStatement(query);
 			ResultSet resultat = ps.executeQuery();
 			while (resultat.next()) {

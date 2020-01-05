@@ -14,7 +14,7 @@
 	crossorigin="anonymous">
 <script src="https://kit.fontawesome.com/c3feb606cd.js"
 	crossorigin="anonymous"></script>
-<title>Document</title>
+<title>Accueil</title>
 <style type="text/css"> 
 .articles-index-title{
 	padding-bottom:50px;
@@ -46,7 +46,6 @@
 	</div>
 
 	<div class="container">
-		<!-- Example row of columns -->
 		<h1 class="display-4 text-center articles-index-title"><u>Les derniers articles publiés</u></h1>
 		<div class="row">
 		<c:forEach items="${ articles }" var="article" varStatus="status">
@@ -79,50 +78,6 @@
 					</div>
 				</div>
 			</c:forEach>
-		<!--<c:forEach items="${ articles }" var="article" varStatus="status">
-			<div class="col-md-4">
-			
-				<h2>${ article.getTitle() }</h2>
-				<p>Donec id elit non mi porta gravida at eget metus. Fusce
-					dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
-					ut fermentum massa justo sit amet risus. Etiam porta sem malesuada
-					magna mollis euismod. Donec sed odio dui.</p>
-				<p>
-					<a class="btn btn-secondary" href="#" role="button">Voir l'article »</a>
-				</p>
-			</div>
-			</c:forEach>
-		</div>
-
-		<hr>
-
-	</div>
-	<div class="container">
-		<table class="table table-striped table-dark">
-			<thead class="thead-dark">
-				<tr>
-					<th scope="col">#</th>
-					<th scope="col">Title</th>
-					<th scope="col">Description</th>
-					<th scope="col">Content</th>
-					<th scope="col">Date</th>
-					<th scope="col">Auteur</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach items="${ articles }" var="article" varStatus="status">
-					<tr>
-						<td><c:out value="${ article.getId() }" /></td>
-						<td><c:out value="${ article.getTitle() }" /></td>
-						<td><c:out value="${ article.getDescription() }" /></td>
-						<td><c:out value="${ article.getContent() }" /></td>
-						<td><c:out value="${ article.getDate() }" /></td>
-						<td><c:out
-								value="${ article.getAutor().getName() } ${ article.getAutor().getSurname() }" /></td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>-->
 		</div>
 	</div>
 	

@@ -14,6 +14,7 @@ ynov\jeremy\servlets\Signup.class
 ynov\jeremy\dao\DAOArticle.class
 ynov\jeremy\dao\DAOFactory.class
 ynov\jeremy\servlets\Index.class
+ynov\jeremy\servlets\AutorServlet.class
 ynov\jeremy\servlets\ArticleServlet.class
 ynov\jeremy\servlets\AddArticle.class
 ynov\jeremy\dao\DAOArticleImpl.class

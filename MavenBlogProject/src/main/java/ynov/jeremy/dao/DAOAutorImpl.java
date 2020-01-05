@@ -34,7 +34,6 @@ public class DAOAutorImpl implements DAOAutor {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		// TODO Auto-generated method stub
 		return autor;
 
 	}
@@ -57,7 +56,6 @@ public class DAOAutorImpl implements DAOAutor {
 
 	public void loginAutor(Autor autor) {
 		setValidation(false);
-		//System.out.println("Validation entrée de boucle"+getValidation());
 		try {
 			PreparedStatement ps = connection
 					.prepareStatement("SELECT * FROM autor WHERE autor_mail=? AND autor_password=?");
@@ -66,9 +64,8 @@ public class DAOAutorImpl implements DAOAutor {
 			ps.setString(2, autor.getPassword());
 			ResultSet result = ps.executeQuery();
 			setValidation(result.next());
-			//System.out.println("Validation in boucle"+ getValidation());
 			if(getValidation()) {
-				System.out.println("L'utilisateur a été trouvé dans la BDD");
+				System.out.println("L'utilisateur à été trouvé dans la BDD");
 				autor.setId(result.getInt("autor_id"));
 				autor.setName(result.getString("autor_name"));
 				autor.setSurname(result.getString("autor_surname"));

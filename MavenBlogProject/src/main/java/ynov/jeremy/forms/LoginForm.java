@@ -15,6 +15,7 @@ public class LoginForm {
 	
 	private static final String CHAMP_EMAIL  = "email";
     private static final String CHAMP_PASS   = "password";
+    
     private String result;
 	private Map<String, String> errors = new HashMap<String, String>();
 	

@@ -4,11 +4,11 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
 	id="WebApp_ID" version="4.0">
 	<display-name>mavenWebProject</display-name>
+	
 	<servlet>
 		<servlet-name>Index</servlet-name>
 		<servlet-class>ynov.jeremy.servlets.Index</servlet-class>
 	</servlet>
-
 	<servlet-mapping>
 		<servlet-name>Index</servlet-name>
 		<url-pattern>/</url-pattern>
@@ -18,7 +18,6 @@
 		<servlet-name>ArticleServlet</servlet-name>
 		<servlet-class>ynov.jeremy.servlets.ArticleServlet</servlet-class>
 	</servlet>
-
 	<servlet-mapping>
 		<servlet-name>ArticleServlet</servlet-name>
 		<url-pattern>/article</url-pattern>
@@ -28,7 +27,6 @@
 		<servlet-name>Articles</servlet-name>
 		<servlet-class>ynov.jeremy.servlets.Articles</servlet-class>
 	</servlet>
-
 	<servlet-mapping>
 		<servlet-name>Articles</servlet-name>
 		<url-pattern>/articles</url-pattern>
@@ -38,7 +36,6 @@
 		<servlet-name>AddArticle</servlet-name>
 		<servlet-class>ynov.jeremy.servlets.AddArticle</servlet-class>
 	</servlet>
-
 	<servlet-mapping>
 		<servlet-name>AddArticle</servlet-name>
 		<url-pattern>/add</url-pattern>
@@ -48,7 +45,6 @@
 		<servlet-name>UpdateArticle</servlet-name>
 		<servlet-class>ynov.jeremy.servlets.UpdateArticle</servlet-class>
 	</servlet>
-
 	<servlet-mapping>
 		<servlet-name>UpdateArticle</servlet-name>
 		<url-pattern>/update</url-pattern>
@@ -58,21 +54,28 @@
 		<servlet-name>DeleteArticle</servlet-name>
 		<servlet-class>ynov.jeremy.servlets.DeleteArticle</servlet-class>
 	</servlet>
-
 	<servlet-mapping>
 		<servlet-name>DeleteArticle</servlet-name>
 		<url-pattern>/delete</url-pattern>
 	</servlet-mapping>
 	
 	<servlet>
+		<servlet-name>AutorServlet</servlet-name>
+		<servlet-class>ynov.jeremy.servlets.AutorServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AutorServlet</servlet-name>
+		<url-pattern>/autor</url-pattern>
+	</servlet-mapping>
+	<servlet>
 		<servlet-name>Autors</servlet-name>
 		<servlet-class>ynov.jeremy.servlets.Autors</servlet-class>
 	</servlet>
-
 	<servlet-mapping>
 		<servlet-name>Autors</servlet-name>
 		<url-pattern>/autors</url-pattern>
 	</servlet-mapping>
+	
 	
 	<servlet>
 		<servlet-name>Login</servlet-name>
@@ -98,16 +101,10 @@
 		<servlet-name>Disconnection</servlet-name>
 		<servlet-class>ynov.jeremy.servlets.Disconnection</servlet-class>
 	</servlet>
-
 	<servlet-mapping>
 		<servlet-name>Disconnection</servlet-name>
 		<url-pattern>/disconnection</url-pattern>
 	</servlet-mapping>
-	
-	
-	
-	
-	
 	
 
 	<welcome-file-list>

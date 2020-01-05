@@ -23,7 +23,6 @@ public class DeleteArticle extends HttpServlet{
 		deletearticle.setId(idArticle);
 		daoarticle.deleteArticle(deletearticle);
 		
-		
 		resp.sendRedirect( req.getContextPath() + "/articles");
 	}
 

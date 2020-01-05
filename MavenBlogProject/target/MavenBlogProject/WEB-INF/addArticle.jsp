@@ -41,7 +41,7 @@
 			<div class="form-group">
 				<label for="article_content">Contenu <span class="text-danger">*</span></label>
 				<textarea type="text" class="form-control" name="article_content"
-					id="article_content" rows="5" required="required"></textarea>
+					id="article_content" rows="5" maxlength="1000" required="required"></textarea>
 			</div>
 			<input type="submit"/>
 		</form>

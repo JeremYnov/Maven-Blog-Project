@@ -2,7 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<html lang="en">
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,50 +13,36 @@
 	crossorigin="anonymous">
 <script src="https://kit.fontawesome.com/c3feb606cd.js"
 	crossorigin="anonymous"></script>
-<title>Document</title>
+<title>Auteurs</title>
 </head>
 <body>
 	<jsp:include page="header.jsp" />
 
-	<h1>Ceci est la page autors</h1>
+	<h1 class="display-1 text-center"><u>Auteurs</u></h1>
 
 	<div class="container">
-		<div class="row">
-			<c:forEach items="${ articles }" var="article" varStatus="status">
-				<div class="col-lg-4 col-md-6 mb-4">
-					<div class="card h-100">
-						<a href="#"></a> <a href="#"><img src="" width="100%"
-							height="150" /></a>
-						<div class="card-body">
-							<h4 class="card-title">
-								<a
-									href="<%=application.getContextPath()%>/article?id=${article.getId()}"><c:out
-										value="${ article.getTitle() }" /></a>
-							</h4>
-							<h5>
-								Par :
-								<c:out
-									value="${article.getAutor().getId()}${ article.getAutor().getName() } ${ article.getAutor().getSurname() }" />
-							</h5>
-							<p class="card-text">
-								<c:out value="${ article.getDescription() }" />
-							</p>
-						</div>
-						<div class="card-footer">
-							<p>
-								Écris le :
-								<c:out value="${ article.getDate() }" />
-							</p>
-						</div>
-						<div class="card-footer">
-							<a
-								href="<%=application.getContextPath()%>/article?id=${article.getId()}"
-								class="btn btn-primary">Lire le post</a>
-						</div>
-					</div>
-				</div>
+	<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Prénom</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Mail</th>
+    </tr>
+  </thead>
+  <tbody>
+  <c:forEach items="${ autors }" var="autors" varStatus="status">
+   <tr>
+      <td>${autors.getName()}</td>
+      <td>${autors.getSurname()}</td>
+      <td>${autors.getMail()}</td>
+      <td><a type="button" class="btn btn-primary" href="<%=application.getContextPath()%>/autor?id=${autors.getId()}">Article(s) de l'auteur</a></td>
+
+    </tr>
 			</c:forEach>
-		</div>
+  </tbody>
+</table>
+
+			
 	</div>
 
 

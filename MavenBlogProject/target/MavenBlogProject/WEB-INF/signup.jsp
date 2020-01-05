@@ -14,7 +14,7 @@
 	crossorigin="anonymous">
 <script src="https://kit.fontawesome.com/c3feb606cd.js"
 	crossorigin="anonymous"></script>
-<title>Document</title>
+<title>Créer un compte</title>
 <style type="text/css">
 .form-label-group {
 	padding-bottom: 15px;

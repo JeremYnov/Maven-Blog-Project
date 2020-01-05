@@ -13,7 +13,7 @@
 	crossorigin="anonymous">
 <script src="https://kit.fontawesome.com/c3feb606cd.js"
 	crossorigin="anonymous"></script>
-<title>Document</title>
+<title>Modifier</title>
 <style type="text/css">
 .container {
   padding : 30px 0;
@@ -35,12 +35,12 @@
 				<label for="article_content">Description (200 caractères
 					max) <span class="text-danger">*</span> </label>
 				<textarea type="text" class="form-control" name="article_description"
-					id="article_content" rows="2" maxlength="200" required="required">${article.getDescription()}</textarea>
+					id="article_content" rows="2" maxlength="199" required="required">${article.getDescription()}</textarea>
 			</div>
 			<div class="form-group">
 				<label for="article_content">Contenu <span class="text-danger">*</span></label>
 				<textarea type="text" class="form-control" name="article_content"
-					id="article_content" rows="5" required="required">${article.getContent()}</textarea>
+					id="article_content" rows="5" maxlength="4999" required="required">${article.getContent()}</textarea>
 			</div>
 			<input type="submit"/>
 		</form>
