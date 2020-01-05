@@ -28,6 +28,7 @@
 	<jsp:include page="header.jsp" />
 
 	<div class="container">
+	
 		<c:if test="${empty sessionScope.autorSession}">
 			<div class="alert alert-dark" role="alert">
 					Pour <span class="text-primary font-weight-bold">créer</span>, <span
@@ -39,6 +40,13 @@
 						href="<%=application.getContextPath()%>/signup" class="alert-link">inscrire</a>.
 			</div>
 		</c:if>
+		
+		<c:if test="${empty articles}">
+	<div class="alert alert-warning" role="alert">
+  Aucun article n'a été rédigé pour le moment. <a href="<%=application.getContextPath()%>/login"
+						class="alert-link">Connectez-vous</a> pour en écrire un. 
+</div>
+	</c:if>
 
 		<c:if test="${!empty sessionScope.autorSession}">
 			<a type="button" class="btn btn-primary btn-lg btn-block"
